@@ -32,20 +32,13 @@ export default function RootLayout({
 }>) {
   return (
       <ClerkProvider>
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en">
         <body
             className={`${ibmPlexSerif.variable} ${monaSans.variable} relative font-sans antialiased`}
-        >
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
         >
             <Navbar />
             {children}
             <Toaster />
-        </ThemeProvider>
         </body>
         </html>
       </ClerkProvider>
