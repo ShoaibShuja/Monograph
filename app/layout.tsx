@@ -36,9 +36,11 @@ export default function RootLayout({
         <body
             className={`${ibmPlexSerif.variable} ${monaSans.variable} relative font-sans antialiased`}
         >
+        <ThemeProvider>
             <Navbar />
             {children}
             <Toaster />
+        </ThemeProvider>
         </body>
         </html>
       </ClerkProvider>
