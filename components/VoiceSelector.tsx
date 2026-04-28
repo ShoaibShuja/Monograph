@@ -24,7 +24,7 @@ const VoiceSelector = ({ value, onChange, disabled, className }: VoiceSelectorPr
                             const voice = voiceOptions[voiceId as keyof typeof voiceOptions];
                             const isSelected = value === voiceId;
                             return (
-                                <Label
+                                <div
                                     key={voiceId}
                                     className={cn(
                                         'voice-selector-option',
@@ -33,7 +33,7 @@ const VoiceSelector = ({ value, onChange, disabled, className }: VoiceSelectorPr
                                     )}
                                 >
                                     <RadioGroupItem value={voiceId} id={voiceId} className="sr-only" />
-                                    <div className="flex flex-col gap-1">
+                                    <Label htmlFor={voiceId} className="flex flex-col gap-1 cursor-pointer">
                                         <div className="flex items-center gap-2">
                                             <div className={cn(
                                                 "w-4 h-4 rounded-full border flex items-center justify-center",
@@ -46,8 +46,8 @@ const VoiceSelector = ({ value, onChange, disabled, className }: VoiceSelectorPr
                                         <p className="text-xs text-[#777] leading-relaxed">
                                             {voice.description}
                                         </p>
-                                    </div>
-                                </Label>
+                                    </Label>
+                                </div>
                             );
                         })}
                     </div>
@@ -61,7 +61,7 @@ const VoiceSelector = ({ value, onChange, disabled, className }: VoiceSelectorPr
                             const voice = voiceOptions[voiceId as keyof typeof voiceOptions];
                             const isSelected = value === voiceId;
                             return (
-                                <Label
+                                <div
                                     key={voiceId}
                                     className={cn(
                                         'voice-selector-option',
@@ -70,7 +70,7 @@ const VoiceSelector = ({ value, onChange, disabled, className }: VoiceSelectorPr
                                     )}
                                 >
                                     <RadioGroupItem value={voiceId} id={voiceId} className="sr-only" />
-                                    <div className="flex flex-col gap-1">
+                                    <Label htmlFor={voiceId} className="flex flex-col gap-1 cursor-pointer">
                                         <div className="flex items-center gap-2">
                                             <div className={cn(
                                                 "w-4 h-4 rounded-full border flex items-center justify-center",
@@ -83,8 +83,8 @@ const VoiceSelector = ({ value, onChange, disabled, className }: VoiceSelectorPr
                                         <p className="text-xs text-[#777] leading-relaxed">
                                             {voice.description}
                                         </p>
-                                    </div>
-                                </Label>
+                                    </Label>
+                                </div>
                             );
                         })}
                     </div>
