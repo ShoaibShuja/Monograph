@@ -121,10 +121,11 @@ export async function parsePDFFile(file: File) {
       throw new Error('Could not get canvas context');
     }
 
-    await firstPage.render({
-      canvasContext: context,
+    await (firstPage.render({
+      canvasContext: context as any,
       viewport: viewport,
-    }).promise;
+      canvas: canvas as any,
+    }) as any).promise;
 
     // Convert canvas to data URL
     const coverDataURL = canvas.toDataURL('image/png');
