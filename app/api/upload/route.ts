@@ -5,6 +5,10 @@ import {MAX_FILE_SIZE} from "@/lib/constants";
 
 export async function POST(request: Request): Promise<NextResponse> {
     try {
+        if (!process.env.BLOB_READ_WRITE_TOKEN) {
+            throw new Error('Server misconfiguration: missing BLOB_READ_WRITE_TOKEN');
+        }
+
         const body = (await request.json()) as HandleUploadBody;
 
         const jsonResponse = await handleUpload({
