@@ -33,6 +33,8 @@ async function processBookSearch(bookId: unknown, query: unknown) {
     return { result: combinedText };
 }
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
     return NextResponse.json({ status: 'ok' });
 }
